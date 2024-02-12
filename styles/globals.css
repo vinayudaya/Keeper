@@ -132,3 +132,9 @@ form button:hover{
   color:#eee;
   filter: drop-shadow(0 0 1em hsl(209, 100%, 80%) );
 }
+
+@media (max-width: 425px) {
+  form{
+    width: 100%;
+  }
+}
