@@ -40,7 +40,7 @@ input, button, textarea{
       --BUTTON-COLOR: whitesmoke;
       --BUTTON-HOVER-BGCOLOR: #111;
       --BUTTON-HOVER-COLOR: #f5f5f5;
-      --DROP-SHADOW: drop-shadow(0 0 1em #888 );
+      --DROP-SHADOW: drop-shadow(0 0 1em #000 );
       --DROP-SHADOW-DARK: drop-shadow(0 0 1em #333 );
     }
 }
