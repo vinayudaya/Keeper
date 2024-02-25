@@ -1,56 +1,92 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 
+input, button, textarea{
+  font-family: 'Nunito', sans-serif;
+}
+:root{
+  --BODY-COLOR: hsl(244, 25%, 82%);
+  --HEADER-BGCOLOR: #6A66A3;
+  --HEADER-COLOR: hsl(135, 19%, 75%);
+  --NOTE-BGCOLOR:hsl(6, 92%, 77%);
+  --NOTE-COLOR: hsl(244, 25%, 22%);
+  --BUTTON-BGCOLOR: #6A66A3;
+  --BUTTON-COLOR: hsl(135, 19%, 85%);
+  --BUTTON-HOVER-BGCOLOR: #B3CBB9;
+  --BUTTON-HOVER-COLOR: #6A66A3;
+  --DROP-SHADOW: drop-shadow(0 0 1em #6A66A3);
+  --DROP-SHADOW-DARK: drop-shadow(0 0 1em #542E71 );
+}
+@media (prefers-color-scheme: dark) {
+    :root{
+      --BODY-COLOR: #333;
+      --HEADER-BGCOLOR: #111;
+      --HEADER-COLOR: #f5f5f5;
+      --NOTE-BGCOLOR: #666;
+      --NOTE-COLOR: #f5f5f5;
+      --BUTTON-BGCOLOR: #111;
+      --BUTTON-COLOR: whitesmoke;
+      --BUTTON-HOVER-BGCOLOR: #111;
+      --BUTTON-HOVER-COLOR: #f5f5f5;
+      --DROP-SHADOW: drop-shadow(0 0 1em #888 );
+      --DROP-SHADOW-DARK: drop-shadow(0 0 1em #333 );
+    }
 }
 body {
-  background: hsl(209, 100%, 90%);
+  background: var(--BODY-COLOR);
+  font-family: 'Nunito', sans-serif;
 }
 
 header {
-  background-color: hsl(209, 100%, 30%);
+  background-color: var(--HEADER-BGCOLOR);
   padding: 16px 32px;
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.3);
   text-align: center;
 }
 
 header h1 {
-  color: #fff;
+  color: var(--HEADER-COLOR);
   font-family: "McLaren", cursive;
   font-weight: 200;
 }
 
 footer {
-  background-color: hsl(209, 100%, 30%);
+  background-color: var(--HEADER-BGCOLOR);
   position: absolute;
   text-align: right;
   bottom: 0;
   padding: 16px 32px;
   width: 100%;
   height: 2.5rem;
-}
-
-footer p {
-  color: #fff;
+  color: var(--HEADER-COLOR);
   font-weight: 200;
 }
 .note {
-  background: #fff;
+
   border-radius: 7px;
   box-shadow: 0 1px 5px #333;
   padding: 10px;
   width: 240px;
   margin: 16px;
   float: left;
-  background: linear-gradient(hsl(209, 54%, 89%), hsl(209, 53%, 89%));
-  color: #333;
-  color: hsl(209, 100%, 40%);
+  background: var(--NOTE-BGCOLOR);
+  color: var(--NOTE-COLOR);
+
 }
 .note:hover{
-  filter: drop-shadow(0 0 2em hsl(209, 100%, 80%) );
+  filter: var(--DROP-SHADOW);
 }
 .note h1 {
   font-size: 1.1em;
@@ -63,42 +99,42 @@ footer p {
   word-wrap: break-word;
 }
 
-.note button {
+button {
   position: relative;
   float: right;
   margin-right: 10px;
-  color: #fff;
+  color: var(--BUTTON-COLOR);
   border: none;
   width: 72px;
   height: 36px;
   cursor: pointer;
   outline: none;
-  background-color: hsl(209, 100%, 40%);
+  background-color: var(--BUTTON-BGCOLOR);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   border-radius: 10%;
 }
 ::placeholder{
-  color: hsl(209, 100%, 40%);
+  color: var(--NOTE-COLOR);
   font-size: 1.3rem;
   font-weight: bold;
 }
-.note button:hover{
-  background: hsl(209, 100%, 30%);
-  color:#eee;
-  filter: drop-shadow(0 0 2em hsl(209, 100%, 80%) );
+button:hover{
+  background: var(--BUTTON-HOVER-BGCOLOR);
+  color:var(--BUTTON-HOVER-COLOR);
+  filter: var(--DROP-SHADOW-DARK);
 }
 form {
   position: relative;
   width: 480px;
   margin: 30px auto 20px auto;
-  background: linear-gradient(hsl(209, 54%, 89%), hsl(209, 53%, 89%));
+  background: var(--NOTE-BGCOLOR);
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 1px 5px #333;
-  border:#333;
+  border:var(--NOTE-COLOR);
 }
 form:hover{
-  filter: drop-shadow(0 0 2em hsl(209, 100%, 80%) );
+  filter: var(--DROP-SHADOW);
 }
 form input,
 form textarea {
@@ -110,27 +146,13 @@ form textarea {
   font-family: inherit;
   resize: none;
   background: transparent;
-  color: hsl(209, 100%, 40%);
+  color: var(--NOTE-COLOR);
   font-weight: bold;
 }
 form button {
   position: absolute;
   right: 10px;
   bottom: 10px;
-  background: hsl(209, 100%, 40%);
-  color: #fff;
-  border: none;
-  border-radius: 10%;
-  width: 72px;
-  height: 36px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  outline: none;
-}
-form button:hover{
-  background: hsl(209, 100%, 30%);
-  color:#eee;
-  filter: drop-shadow(0 0 1em hsl(209, 100%, 80%) );
 }
 
 @media (max-width: 425px) {
