@@ -35,11 +35,11 @@ input, button, textarea{
       --HEADER-BGCOLOR: #111;
       --HEADER-COLOR: #f5f5f5;
       --NOTE-BGCOLOR: #666;
-      --NOTE-COLOR: #f5f5f5;
+      --NOTE-COLOR: #d5d5d5;
       --BUTTON-BGCOLOR: #111;
       --BUTTON-COLOR: whitesmoke;
-      --BUTTON-HOVER-BGCOLOR: #111;
-      --BUTTON-HOVER-COLOR: #f5f5f5;
+      --BUTTON-HOVER-BGCOLOR: #222;
+      --BUTTON-HOVER-COLOR: #d5d5d5;
       --DROP-SHADOW: drop-shadow(0 0 1em #000 );
       --DROP-SHADOW-DARK: drop-shadow(0 0 1em #333 );
     }
